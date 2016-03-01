@@ -1,5 +1,5 @@
 # JavaScript Quiz Application
-Created using vanilla JavaScript containing the following functions:
+Created using JavaScript with the following features:
 
 - A simple quiz with radio button choices, that shows the quiz taker their score upon completion.
 - The quiz can show any number of questions but only four choices.
