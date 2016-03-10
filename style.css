@@ -1,0 +1,15 @@
+body {
+	text-align: center;
+}
+.question {
+
+}
+.question h3 {
+	padding: 1em;
+}
+.choices {
+	padding: 3em;
+}
+.choices input {
+	
+}
