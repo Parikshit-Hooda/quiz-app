@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css.css">
-	<script type="text/javascript" src="js.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
 	<title>Quiz App</title>
 </head>
-<body onload="changeChoices()">
+<body>
 	<div class="question">
-		<h1>Question#1</h1>
-			<h3>What is 1+1?</h3>
+		<h1 id="questionNum">Question#</h1>
+			<h3 id="question"></h3>
 	</div>
 
 	<form name="answers">
 		<div class="choices">
-			<input type="radio" name="choice" value="0"><label id="choice1"></label><br>
-			<input type="radio" name="choice" value="1"><label id="choice2"></label><br>
-			<input type="radio" name="choice" value="2"><label id="choice3"></label><br>
-			<input type="radio" name="choice" value="3"><label id="choice4"></label><br>
-			<input type="submit" value="Submit" onclick="">
+			<input type="radio" name="choice1" value="0"><label id="choice1"></label><br>
+			<input type="radio" name="choice2" value="1"><label id="choice2"></label><br>
+			<input type="radio" name="choice3" value="2"><label id="choice3"></label><br>
+			<input type="radio" name="choice4" value="3"><label id="choice4"></label><br>
+			<input type="submit" value="Submit" onclick="correctAnswer()">
 		</div>
 	</form>
 </body>
