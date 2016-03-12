@@ -1,36 +1,71 @@
-function ready(fn) {
+/* function ready(fn) {
   if (document.readyState != 'loading'){
     fn();
   } else {
     document.addEventListener('DOMContentLoaded', fn);
   }
-}
+} 
 
-function changeChoices() {
-	var questions = [
-	{question: 'What is 1+1?',
-	choices:[1, 2, 3, 4],
-	correct:1},
-	{question: 'What is 2+2?',
-	choices:[2, 3, 4, 5],
-	correct:2}
+ready(choices);
+
+*/
+
+var content = 
+[
+	{question: 'What is 1+1?', choices: [1, 2, 3, 4], correct: 1},
+	{question: 'What is 2+2?', choices: [2, 3, 4, 5], correct: 2},
+	{question: 'What is 2+3?', choices: [2, 's', 4, 5], correct: 2},
+	{question: 'What is 2+4?', choices: [2, 's', 4, 5], correct: 2},
+	{question: 'What is 2+5?', choices: [2, 3, 'z', 5], correct: 2},
 ];
-	document.getElementById('questionNum').innerHTML += 1;
 
-	document.getElementById('question').innerHTML = questions[0]['question'];
-	
-	document.getElementById('choice1').innerHTML = questions[0]['choices'][0];
-	document.getElementById('choice2').innerHTML = questions[0]['choices'][1];
-	document.getElementById('choice3').innerHTML = questions[0]['choices'][2];
-	document.getElementById('choice4').innerHTML = questions[0]['choices'][3];
-}
+var x = 0;
+var y = 1;
+var score = 0;
 
-function correctAnswer() {
-	if (document.answers.choice2.checked === true) {
-		alert('correct');
+function choices() {
+
+	if (content[x] === undefined) {
+		document.querySelector('.score').textContent = 'Score: ' + score;
+		document.form1.style.visibility = 'hidden';
+		document.querySelector('.header').style.visibility = 'hidden';
+
 	} else {
-		alert('wrong');	
+
+		var questionNumber = document.querySelector('.questionNumber');
+		questionNumber.textContent = 'Question#' + y;
+
+		var question = document.querySelector('.question');
+		question.textContent = content[x]['question'];
+
+		var choices = document.querySelectorAll('label');
+		for (var i = 0; i < choices.length; i++) {
+			choices[i].textContent = content[x]['choices'][i];
+		}
 	}
 }
 
-ready(changeChoices);
+function next() {
+	var inputs = document.querySelectorAll('input');
+
+	if (content[x] === undefined) {
+		return false;
+	}
+
+	else if (inputs[0].checked !== true && inputs[1].checked !== true && inputs[2].checked !== true && inputs[3].checked !== true) {
+		alert('Please select an answer');
+
+	} else {
+		for (var i = 0; i < inputs.length; i++) {
+			if (inputs[i].checked === true && i === content[x]['correct']) {
+				score++;
+			}
+			inputs[i].checked = false;
+		}
+
+		x++;
+		y++;
+		choices();
+
+	}
+}

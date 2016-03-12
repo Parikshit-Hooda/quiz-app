@@ -1,15 +1,18 @@
 body {
 	text-align: center;
+	font-family: sans-serif;
 }
-.question {
-
+.header h1 {
+	font-size: 3em;
 }
-.question h3 {
+.header h2 {
 	padding: 1em;
+	font-size: 3em;
 }
-.choices {
-	padding: 3em;
+.answers {
+	font-size: 1em;
+	margin-top: -1em;
 }
-.choices input {
+.answers label {
 	
 }

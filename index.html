@@ -3,21 +3,23 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="script.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<title>Quiz App</title>
 </head>
-<body>
-	<div class="question">
-		<h1 id="questionNum">Question#</h1>
-			<h3 id="question"></h3>
+<body onload="choices()">
+	<h1 class="score"></h1>
+	<div class="header">
+		<h1 class="questionNumber"></h1>
+			<h2 class="question"></h2>
 	</div>
 
-	<form name="answers">
-		<div class="choices">
-			<input type="radio" name="choice1" value="0"><label id="choice1"></label><br>
-			<input type="radio" name="choice2" value="1"><label id="choice2"></label><br>
-			<input type="radio" name="choice3" value="2"><label id="choice3"></label><br>
-			<input type="radio" name="choice4" value="3"><label id="choice4"></label><br>
-			<input type="submit" value="Submit" onclick="correctAnswer()">
+	<form name="form1">
+		<div class="answers">
+			<input type="radio" name="radioChoice"><label></label><br>
+			<input type="radio" name="radioChoice"><label></label><br>
+			<input type="radio" name="radioChoice"><label></label><br>
+			<input type="radio" name="radioChoice"><label></label><br>
+			<button type="button" onclick="next()">Next</button>
 		</div>
 	</form>
 </body>
