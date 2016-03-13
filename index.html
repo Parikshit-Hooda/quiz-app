@@ -6,7 +6,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<title>Quiz App</title>
 </head>
-<body onload="choices()">
+<body>
 	<h1 class="score"></h1>
 	<div class="header">
 		<h1 class="questionNumber"></h1>
@@ -15,11 +15,11 @@
 
 	<form name="form1">
 		<div class="answers">
-			<input type="radio" name="radioChoice"><label></label><br>
-			<input type="radio" name="radioChoice"><label></label><br>
-			<input type="radio" name="radioChoice"><label></label><br>
-			<input type="radio" name="radioChoice"><label></label><br>
-			<button type="button" onclick="next()">Next</button>
+			<input type="radio" name="radioChoice"> <label></label><br>
+			<input type="radio" name="radioChoice"> <label></label><br>
+			<input type="radio" name="radioChoice"> <label></label><br>
+			<input type="radio" name="radioChoice"> <label></label><br>
+			<div class="container"><button type="button" onclick="next()">Next</button></div>
 		</div>
 	</form>
 </body>
