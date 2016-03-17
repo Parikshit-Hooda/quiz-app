@@ -64,3 +64,16 @@ function next() {
 		choices();
 	}
 }
+
+function back() {
+	var inputs = document.querySelectorAll('input');
+
+	if (x === 0) {
+		return false;
+
+	} else {
+		x--;
+		y--;
+		choices();
+	}
+}
